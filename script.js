@@ -15,6 +15,23 @@ let startTime = localStorage.getItem("time") || "";
 const interval = setInterval(intervalHandler, 1000);
 const throttleScroll = throttle(scrollHandler, 100);
 
+function iniFrame() {
+    if ( window.location !== window.parent.location )
+    {
+     
+        // The page is in an iFrames
+        console.log("The page is in an iFrame");
+    }
+    else {
+         
+        // The page is not in an iFrame
+        console.log("The page is not in an iFrame");
+    }
+}
+ 
+// Calling iniFrame function
+iniFrame();
+
 // Handler function for timer
 function intervalHandler() {
   let currentTime = Math.floor(new Date().getTime() - startTime);
